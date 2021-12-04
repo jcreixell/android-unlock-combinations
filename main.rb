@@ -20,10 +20,19 @@ def move(visited, x, y)
   puts "#{visited + [[x, y]]}"
   end
 
+  # Horizontal
   move(visited + [[x,y]], x-1, y)
   move(visited + [[x,y]], x+1, y)
+
+  # Vertical
   move(visited + [[x,y]], x, y-1)
   move(visited + [[x,y]], x, y+1)
+
+  # Diagonals
+  move(visited + [[x,y]], x+1, y+1)
+  move(visited + [[x,y]], x-1, y+1)
+  move(visited + [[x,y]], x+1, y-1)
+  move(visited + [[x,y]], x-1, y-1)
 end
 
 (0..2).each do |x|

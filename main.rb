@@ -42,6 +42,17 @@ def move(visited, x, y)
   move(visited + [[x,y]], x+1, y-1)
   move(visited + [[x,y]], x-1, y-1)
 
+  move(visited + [[x,y]], x+2, y+1)
+  move(visited + [[x,y]], x-2, y+1)
+  move(visited + [[x,y]], x+2, y-1)
+  move(visited + [[x,y]], x-2, y-1)
+
+  move(visited + [[x,y]], x+1, y+2)
+  move(visited + [[x,y]], x-1, y+2)
+  move(visited + [[x,y]], x+1, y-2)
+  move(visited + [[x,y]], x-1, y-2)
+
+  # Non Adyacent Diagonals
   move(visited + [[x,y]], x+2, y+2) if visited.include?([x+1,y+1])
   move(visited + [[x,y]], x-2, y+2) if visited.include?([x-1,y+1])
   move(visited + [[x,y]], x+2, y-2) if visited.include?([x+1,y-1])
